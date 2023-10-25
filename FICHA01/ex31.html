@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX31</title>
+  </head>
+
+  <body>
+    <script>
+      // Solicitar ao utilizador que insira um número
+      const num = +prompt("Insira um número para verificar se é perfeito:");
+
+      // Inicializar a variável para armazenar a soma dos divisores
+      let divisorSum = 0;
+
+      // Calcular a soma dos divisores naturais próprios
+      for (let i = 1; i < num; i++) {
+        if (num % i === 0) {
+          divisorSum += i;
+        }
+      }
+
+      // Verificar se o número é perfeito
+      if (divisorSum === num) {
+        console.log("SIM, o número é perfeito.");
+      } else {
+        console.log("NÃO, o número não é perfeito.");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX29</title>
+  </head>
+
+  <body>
+    <script>
+      let n = +prompt("Digite um numero?");
+      if (n <= 0) console.log("");
+      if (n === 1) console.log("0");
+      if (n === 2) console.log("0, 1");
+
+      const sequence = [0, 1];
+      for (let i = 2; i < n; i++) {
+        const nextValue = sequence[i - 1] + sequence[i - 2];
+        sequence.push(nextValue);
+      }
+      console.log(sequence);
+    </script>
+  </body>
+</html>
