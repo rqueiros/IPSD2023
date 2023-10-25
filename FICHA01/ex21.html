@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>>EX21</title>
+</head>
+
+<body>
+    <script>
+        let height = +prompt("Altura? (em m)")
+        let weight = +prompt("Peso? (em kg)")
+        let imc = weight / (height * height)
+
+        if (imc < 18.5) {
+            console.log("BAIXO PESO");
+        } else if (imc >= 18.5 && imc < 25) {
+            console.log("PESO NORMAL");
+        } else if (imc >= 25 && imc < 30) {
+            console.log("EXCESSO DE PESO");
+        } else if (imc >= 30 && imc < 35) {
+            console.log("OBESIDADE");
+        } else {
+            console.log("OBESIDADE EXTREMA");
+        }
+
+        console.log(imc);
+
+    </script>
+</body>
+
+</html>

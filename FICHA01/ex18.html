@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX18</title>
+</head>
+
+<body>
+    <script>
+        let side1, side2, side3
+        side1 = +prompt("Digite o comprimento do lado1?")
+        side2 = +prompt("Digite o comprimento do lado2?")
+        side3 = +prompt("Digite o comprimento do lado3?")
+
+        if (side1 == side2 && side2 == side3) {
+            console.log("EQUILATERO");
+        } else if (side1 != side2 && side2 != side3 && side1 != side3) {
+            console.log("ESCALENO");
+        } else {
+            console.log("ISÓSCELES");
+        }
+    </script>
+</body>
+
+</html>

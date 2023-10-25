@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX32</title>
+</head>
+
+<body>
+    <script>
+
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempt = 0
+
+        while (randomNumber!=attempt) {
+            attempt = +prompt("Digite um numero?")
+            if (attempt > randomNumber) {
+                alert("MENOR!!!!!!!!!!!!!!!")
+            } else if (attempt < randomNumber) {
+                alert("MAIOR!!!!!!!!!!!!!!!")
+            } else {
+                alert("ACERTOU")
+            }                       
+        }
+
+    </script>
+</body>
+
+</html>

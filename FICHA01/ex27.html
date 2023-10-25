@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX27</title>
+</head>
+
+<body>
+    <script>
+        let num = 0, sum = 0, count = 0
+        while (num != -1) {
+            num = +prompt("digite um numero?")
+            if (num != -1) {
+                // acumular os números inseridos pelo utilizador
+                sum = sum + num
+                // contar os números inseridos pelo utilizador
+                count = count + 1
+            }
+        }
+
+        // apresentar a média
+        console.log(sum / count);
+
+
+    </script>
+</body>
+
+</html>
