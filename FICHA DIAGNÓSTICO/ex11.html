@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex11</title>
+  </head>
+  <body>
+    <script>
+      const N = [4, 7, 17, 3, 8];
+
+      // Forma tradicional
+      let sum = 0,
+        max = 0,
+        min = 999999;
+      for (let i = 0; i < N; i++) {
+        sum = sum + N[i];
+        if (N[i] > max) {
+          max = N[i];
+        }
+        if (N[i] < min) {
+          min = N[i];
+        }
+      }
+      console.log("Média:", sum / N.length);
+      console.log("Máximo:", max);
+      console.log("Mínimo:", min);
+      console.log("Amplitude:", max - min);
+
+      // Forma moderna
+      const media = N.reduce((acc, val) => acc + val, 0) / N.length;
+      const maximo = Math.max(...N);
+      const minimo = Math.min(...N);
+      const amplitude = maximo - minimo;
+      console.log("Média:", media);
+      console.log("Máximo:", maximo);
+      console.log("Mínimo:", minimo);
+      console.log("Amplitude:", amplitude);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex9</title>
+  </head>
+  <body>
+    <script>
+      let numeros = [];
+      let numero;
+      do {
+        numero = +prompt("Digite um número");
+        if (numero !== -1) {
+          numeros.push(numero);
+        }
+      } while (numero !== -1);
+
+      // Forma tradicional
+      let soma = 0
+      for (let i = 0; i < numeros.length; i++) {
+        sum = sum + numeros[i]        
+      }
+      console.log(sum);
+      
+      // Forma moderna
+      console.log(numeros.reduce((acc, curr) => acc + curr, 0));
+    </script>
+  </body>
+</html>
