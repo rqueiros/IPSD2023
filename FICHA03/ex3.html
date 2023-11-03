@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX3</title>
+</head>
+<body>
+    <script>
+        const carro = {
+            marca:"opel",
+            modelo:"corsa",
+            ano:1999,
+            informacoes() {
+                //return this.marca + "-" + this.modelo + "-" + this.ano
+                return `${this.marca} - ${this.modelo} - ${this.ano}`
+            }
+        }
+
+        let result = carro.informacoes()
+        console.log(result);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX10</title>
+  </head>
+  <body>
+    <script>
+      const musica1 = {
+        titulo: "Histeria",
+        artista: "Muse",
+        ano: 2010,
+        duracao: 190,
+        obterDados() {
+          console.log(
+            `${this.titulo}-${this.artista}-${this.ano}-${this.duracao}`
+          );
+        },
+      };
+      const musica2 = {
+        titulo: "Creep",
+        artista: "Radiohead",
+        ano: 2000,
+        duracao: 165,
+        obterDados() {
+          console.log(
+            `${this.titulo}-${this.artista}-${this.ano}-${this.duracao}`
+          );
+        },
+      };
+      const musica3 = {
+        titulo: "Chico Fininho",
+        artista: "Rui Veloso",
+        ano: 1991,
+        duracao: 212,
+        obterDados() {
+          console.log(
+            `${this.titulo}-${this.artista}-${this.ano}-${this.duracao}`
+          );
+        },
+      };
+
+      let playList = [];
+
+      playList.push(musica1, musica2, musica3);
+
+      //console.log(playList);
+      //console.table(playList);
+      
+      // Título da música mais recente
+      let max = 0,
+        titulo = "";
+      for (const musica of playList) {
+        if (musica.ano > max) {
+          max = musica.ano;
+          titulo = musica.titulo;
+        }
+      }
+      console.log(titulo);
+
+      // Duração total da playlist
+      let sum = 0;
+      for (const musica of playList) {
+        sum = sum + musica.duracao
+      }
+      console.log(sum);
+
+      //musica1.obterDados();
+    </script>
+  </body>
+</html>

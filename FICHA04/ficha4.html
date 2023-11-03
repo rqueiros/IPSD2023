@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FICHA 04</title>
+  </head>
+  <body>
+    <script>
+      // ex1
+      const student = {
+        name: "João",
+        age: 21,
+        email: "joao@email.com",
+      };
+
+      // ex2
+      //console.log(`${student.name} - ${student.age} -${student.email} `);
+
+      // ex3
+      student.age = 25;
+
+      // ex4
+      let pName = prompt("Digite o seu nome?");
+      let pAge = +prompt("Digite a sua idade?");
+      let pEmail = prompt("Digite o seu email?");
+
+      const student2 = {
+        name: pName,
+        age: pAge,
+        email: pEmail,
+      };
+
+      // ex5
+      const students = [];
+
+      // ex6
+      students.push(student, student2);
+
+      // ex7
+      students.push({ name: "Pedro", age: 20, email: "pedro@email.com" });
+      //console.table(students);
+
+      // ex8
+      for (const student of students) {
+        //console.log(student.name);
+      }
+
+      // ex9
+      for (const student of students) {
+        if (student.age > 25) {
+          //console.log(student.name);
+        }
+      }
+
+      // ex10
+      for (const student of students) {
+        if (student.name == "Pedro") {
+          student.email = "pedro@novoemail.com";
+        }
+      }
+      console.table(students);
+
+
+    </script>
+  </body>
+</html>

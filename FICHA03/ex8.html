@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX8</title>
+</head>
+<body>
+    <script>
+        const restaurante = {
+            nome:"Zé do Pipo",
+            cardapio: [
+                {nome:"arroz à lagareiro", preco:10, descricao:"arroz tradicional"},
+                {nome:"prego", preco:9, descricao:"prego em prato com ovo"},
+                {nome:"bacalhau com natas", preco:12, descricao:"bacalhau esfiado com natas"},
+            ]
+        }
+
+        for (const item of restaurante.cardapio) {
+            console.log(item.nome + " - " + item.preco);    
+        }
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX7</title>
+  </head>
+  <body>
+    <script>
+      const contaBancaria = {
+        titular: "Ricardo",
+        saldo: 500,
+        depositar(valor) {
+          this.saldo = this.saldo + valor;
+        },
+        levantar(valor) {
+          if (this.saldo >= valor) {
+            this.saldo = this.saldo - valor;
+          } else {
+            console.log("Saldo insuficiente");
+          }
+        },
+      };
+
+      /* console.log(contaBancaria.saldo);
+      contaBancaria.depositar(100);
+      console.log(contaBancaria.saldo); */
+
+      console.log(contaBancaria.saldo);
+      contaBancaria.levantar(300)
+      console.log(contaBancaria.saldo);
+      contaBancaria.levantar(300)
+      console.log(contaBancaria.saldo);
+
+
+
+      
+    </script>
+  </body>
+</html>
