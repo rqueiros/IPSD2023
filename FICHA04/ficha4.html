@@ -59,6 +59,67 @@
           student.email = "pedro@novoemail.com";
         }
       }
+      //console.table(students);
+
+      // ex11
+      let sum = 0;
+      for (const student of students) {
+        sum = sum + student.age;
+      }
+      //console.log(sum / students.length);
+
+      // ex12
+      let min = 99999,
+        email = "";
+      for (const student of students) {
+        if (student.age < min) {
+          min = student.age;
+          email = student.email;
+        }
+      }
+      // console.log(email);
+
+      // ex13
+      /* let name = pront("Escreva o seu nome?");
+      let isUser = false;
+      for (const student of students) {
+        if (student.name == name) {
+          console.log(`${student.name} - ${student.age} -${student.email} `);
+          isUser = true;
+        }
+      }
+
+      if (isUser == false) {
+        console.log("Estudante não encontrado!");
+      } */
+
+      // ex14
+      let name = pront("Escreva o seu nome?");
+      let i = 0;
+      for (const student of students) {
+        if (student.name == name) {
+          isUser = true;
+          break;
+        }
+        i++;
+      }
+
+      if (isUser == false) {
+        console.log("Estudante não encontrado!");
+      } else {
+        students.splice(i, 1);
+      }
+
+
+      // ex15
+      students.sort(
+        function(s1,s2) {
+          if (s1.age > s2.age) return 1
+          if (s1.age < s2.age) return -1
+          if (s1.age == s2.age) return 0
+        }
+      )
+
       console.table(students);
 
 
