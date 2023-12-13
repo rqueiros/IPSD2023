@@ -1,0 +1,175 @@
+[
+    {
+        "id": "646a40b9b1dd599b",
+        "type": "tab",
+        "label": "Exercício Jogos",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6e99e1b92daa67c0",
+        "type": "ui_text_input",
+        "z": "646a40b9b1dd599b",
+        "name": "",
+        "label": "NOME DO JOGO",
+        "tooltip": "",
+        "group": "631a750455413af1",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 590,
+        "y": 200,
+        "wires": [
+            [
+                "d4e1701a09d6b730",
+                "deaeddcd0e61eb8d"
+            ]
+        ]
+    },
+    {
+        "id": "deaeddcd0e61eb8d",
+        "type": "ui_button",
+        "z": "646a40b9b1dd599b",
+        "name": "",
+        "group": "631a750455413af1",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "OBTER CAPA",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 740,
+        "y": 300,
+        "wires": [
+            [
+                "ea6993f6387b9a15"
+            ]
+        ]
+    },
+    {
+        "id": "d4e1701a09d6b730",
+        "type": "change",
+        "z": "646a40b9b1dd599b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gameName",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ea6993f6387b9a15",
+        "type": "http request",
+        "z": "646a40b9b1dd599b",
+        "name": "GET https://www.freetogame.com/api/games",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://www.freetogame.com/api/games",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1050,
+        "y": 380,
+        "wires": [
+            [
+                "0ef2da29ae004c6d"
+            ]
+        ]
+    },
+    {
+        "id": "0ef2da29ae004c6d",
+        "type": "function",
+        "z": "646a40b9b1dd599b",
+        "name": "Obter Jogo",
+        "func": "\n\n// Método tradicional\nfor (const game of msg.payload) {\n    if(game.title == global.get(\"gameName\")) {\n        msg.game = game\n        break\n    }\n}\n\n// Método moderno\n//msg.game = msg.payload.find(game=>game.title == global.get(\"gameName\"))\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 480,
+        "wires": [
+            [
+                "d11497cdb8cb576f"
+            ]
+        ]
+    },
+    {
+        "id": "d11497cdb8cb576f",
+        "type": "ui_template",
+        "z": "646a40b9b1dd599b",
+        "group": "631a750455413af1",
+        "name": "",
+        "order": 3,
+        "width": 6,
+        "height": 3,
+        "format": "<img src=\"{{msg.game.thumbnail}}\"/>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1400,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "631a750455413af1",
+        "type": "ui_group",
+        "name": "OBTER CAPA DO JOGO",
+        "tab": "d1de9c53b6caeabf",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "d1de9c53b6caeabf",
+        "type": "ui_tab",
+        "name": "JOGOS",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
